@@ -6,20 +6,19 @@ let answer = 0;
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// Add a single event listener for all button clicks on the calculator
+
 calculator.addEventListener('click', (event) => {
   const clicked = event.target.innerText;
 
-  // Log the clicked button (for debugging)
+  
   console.log(`Button clicked: ${clicked}`);
 
-  // Handle number clicks
+  // clicking
   if (event.target.classList.contains('number')) {
     numPair.push(parseFloat(clicked)); // Convert number and add to numPair
     console.log(`Current numPair: ${numPair}`);
   }
-
-  // Handle multiplication
+=
   if (clicked === '*') {
     if (numPair.length < 2) {
       console.log('Please provide two numbers to perform multiplication.');
@@ -46,7 +45,7 @@ calculator.addEventListener('click', (event) => {
     } else {
       answer = numPair[0] - numPair[1];
       console.log(`The answer to ${numPair[0]} - ${numPair[1]} = ${answer}`);
-      numPair = []; // Clear numPair after calculation
+      numPair = []; // Clearing numPair FIXES BUG
     }
   }
   if (clicked === '/') {
@@ -55,10 +54,10 @@ calculator.addEventListener('click', (event) => {
     } else {
       answer = numPair[0] / numPair[1];
       console.log(`The answer to ${numPair[0]} / ${numPair[1]} = ${answer}`);
-      numPair = []; // Clear numPair after calculation
+      numPair = []; 
     }
   }
-  // Handle clearing
+  // clear f(x)
   if (clicked === 'C') {
     numPair = [];
     answer = 0;
